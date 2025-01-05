@@ -1,0 +1,128 @@
+function add(a,b){
+    return a+b;
+}
+
+var add=function(a,b){
+    return a+b;
+}
+
+var add=(a,b)=>{return a+b;}
+
+var add=(a,b)=>a+b;
+
+var result = add(5,324)
+console.log(result);
+
+(function(a,b){
+    console.log("sathis shortern function");
+})();
+
+function Callback(){
+    console.log("call back function successfully completed");
+}
+
+var add= function(a,b,Callback){
+    var result=a+b;
+    console.log("result "+ result);
+    Callback();
+}
+
+add(23,24,()=>{ console.log("call back function successfully completed");});
+
+const { json } = require('express');
+var fs= require('fs');
+var os= require('os');
+
+console.log(os.userInfo().username);
+
+fs.copyFile('./first.txt','./copyfirst.txt', ()=>{
+    console.log("file copied successfully");
+});
+
+
+const stream = fs('./first.txt');
+setTimeout(() => {
+  stream.close(); // This may not close the stream.
+  // Artificially marking end-of-stream, as if the underlying resource had
+  // indicated end-of-file by itself, allows the stream to close.
+  // This does not cancel pending read operations, and if there is such an
+  // operation, the process may still not be able to exit successfully
+  // until it finishes.
+  stream.push(null);
+  stream.read(0);
+}, 100); 
+ const { unlink } = require('node:fs/promises');
+
+(async function(path) {
+  try {
+    await unlink(path);
+    console.log(`successfully deleted ${path}`);
+  } catch (error) {
+    console.error('there was an error:', error.message);
+  }
+})('C:/d/My code/Node_Practice/demo');
+
+const {open} = import('node:fs/promises')
+
+let filehandle;
+try{
+    filehandle=await open('first.txt','r');
+}
+finally{
+    console.log('executed with error');
+    }
+var notes=require('./notes.js');
+
+console.log("server jd file");
+
+var ag=notes.addnumber(notes.age,18);
+console.log(ag);
+
+
+var _= require('lodash');
+
+var data=["ascas","sacsfc",12,13,15,"true",123]
+
+var filter=_.uniq(data);
+console.log(filter);
+
+ const jsonstring='{"name":"Sathis","age":29,"Hobbies":["Play cricket","solvingproblem"]}';
+ const jsonobject=JSON.parse(jsonstring);
+ console.log(jsonobject)
+
+ const object={
+    name: "billa",
+    age:55,
+    skill:["Mafia","guns handling"]
+ };
+ const name=JSON.stringify(object);
+console.log(name);
+ const objectjson=
+console.log(typeof jsonobject);
+
+const express = require('express')
+const app = express()
+const db=require('db');
+
+app.get('/',function(req,res){res.send("this is node practice session on port 3000")})
+
+app.post("/menu",function(req,res){
+  req.accepts();
+  res.send("data is saved");
+ })
+
+app.get('/chicken', function (req, res) {
+  res.send('Welcome to chicken My node js server page, im glad to present you')
+})
+
+app.get('/idli',  (req, res)=> {
+    const ravaidli={
+        name:"Rava idli",
+        size:10,
+        is_sambharrequ:true,
+        is_chutneyrequ:false
+    };
+    res.send(ravaidli)
+  })
+app.listen(3000,()=>{console.log("console is running on 3000")})
+
