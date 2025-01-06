@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const db=require('./db');
 require('dotenv').config();
-
+//command to check git
 const bodyParser=require('body-parser');
 
 
