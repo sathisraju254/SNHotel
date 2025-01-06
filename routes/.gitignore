@@ -1,3 +1,4 @@
 #Ignore node_module dir
 node_modules/
 #other dir if required
+.env
