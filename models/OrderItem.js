@@ -7,7 +7,8 @@ const OrderItemSchema=mongoose.Schema({
         require: true
     },
     Order_item:{
-        name:[String]
+        name:[String],
+        default:["Food"]
     },
     TotalBill:{
         type: Number,
