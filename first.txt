@@ -5,7 +5,7 @@ function add(a,b){
 var add=function(a,b){
     return a+b;
 }
-
+// try to code and commit through git hub from Mobile browser 
 var add=(a,b)=>{return a+b;}
 
 var add=(a,b)=>a+b;
